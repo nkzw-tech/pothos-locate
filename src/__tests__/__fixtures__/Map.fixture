@@ -1,0 +1,38 @@
+import builder from '../builder.tsx';
+
+export const MapSizeEnum = builder.enumType(MapSize, {
+  name: 'MapSize',
+});
+
+export const MapSortByEnum = builder.enumType('MapSortBy', {
+  values: [...MapSortBy],
+});
+
+const Map = builder.prismaNode('Map', {
+  fields: (t) => ({
+    biome: t.field({
+      nullable: false,
+      resolve: ({ biome }) => getBiomeName(biome),
+      type: Biome,
+    }),
+    campaigns: t.relatedConnection('campaigns', {
+      cursor: 'id',
+      nullable: false,
+      query: { orderBy: { id: 'asc' } },
+    }),
+    creator: t.relation('creator', { nullable: false }),
+  }),
+  id: { field: 'id' },
+  interfaces: [MapLike],
+});
+
+builder.queryFields((t) => ({
+  maps: t.prismaConnection({
+    cursor: 'id',
+    nullable: false,
+    resolve: (query, _, args) => resolveMaps(query, args, true),
+    type: 'Map',
+  }),
+}));
+
+export default Map;
