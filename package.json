@@ -1,6 +1,6 @@
 {
   "name": "@nkzw/pothos-locate",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Enables GraphQL go-to-definition by mapping types and fields to Pothos source locations.",
   "type": "module",
   "bin": "./lib/index.js",

@@ -40,6 +40,8 @@ The package currently supports three configuration options:
 
 ## Troubleshooting
 
+### It doesn't work
+
 You can call the script directly to see if it is working correctly. For example, if you have a `User` type with a `displayName` field you can run the following command:
 
 ```bash
@@ -53,3 +55,7 @@ and it should output the exact location:
 ```
 
 _Note: The `<projectName>` is unused in this package but still passed by the Relay VS Code extension. You can use any string here._
+
+### It still doesn't work for my codebase
+
+Send a Pull Request or consider a [GitHub Sponsorship](https://github.com/sponsors/cpojer).
