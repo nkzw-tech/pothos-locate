@@ -2,6 +2,8 @@
 
 Enables GraphQL go-to-definition by mapping types and fields to Pothos source locations.
 
+https://github.com/user-attachments/assets/e941950a-2944-4ab8-9954-17c6ad320347
+
 ## Installation
 
 Install the [Relay VS Code extension](https://marketplace.visualstudio.com/items?itemName=meta.relay) for VS Code.
